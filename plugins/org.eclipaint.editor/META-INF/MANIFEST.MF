@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: EcliPaint
+Bundle-Name: EcliPaint Editor
 Bundle-SymbolicName: org.eclipaint.editor;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 2.5.0.qualifier
 Bundle-Activator: org.eclipaint.editor.activator.Activator
 Bundle-Vendor: Jabier Martinez
 Require-Bundle: org.eclipse.ui,
