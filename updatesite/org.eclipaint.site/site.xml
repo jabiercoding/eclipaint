@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipaint.feature_2.5.0.201601151240.jar" id="org.eclipaint.feature" version="2.5.0.201601151240">
+      <category name="EcliPaint"/>
+   </feature>
+   <category-def name="EcliPaint" label="EcliPaint">
+      <description>
+         EcliPaint
+      </description>
+   </category-def>
+</site>
