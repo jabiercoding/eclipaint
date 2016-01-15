@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            file-extensions="png,gif,bmp,jpg,jpeg"
+            id="org.eclipaint.imageContentType"
+            name="Image"
+            priority="normal">
+      </content-type>
+   </extension>
+</plugin>

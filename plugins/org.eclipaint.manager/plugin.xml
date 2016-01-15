@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+         point="org.eclipse.ui.views">
+      <category
+            name="EcliPaint Icon Manager"
+            id="org.eclipaint.views.manager">
+      </category>
+      <view
+            allowMultiple="true"
+            category="org.eclipaint.views.manager"
+            class="org.eclipaint.manager.views.IconManagerView"
+            icon="icons/manager/iconManager.png"
+            id="org.eclipaint.manager.views.IconManager"
+            name="EcliPaint Icon Manager">
+      </view>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="org.eclipaint.manager.properties.ImageResourcePropertyPage"
+            id="org.eclipse_icons.editor.properties.samplePropertyPage"
+            name="Image">
+         <enabledWhen>
+            <and>
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof>
+               <test
+                     property="org.eclipse.core.resources.contentTypeId"
+                     value="org.eclipaint.imageContentType">
+               </test>
+            </and>
+         </enabledWhen>
+      </page>
+   </extension>
+      <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            class="org.eclipaint.manager.label.decorator.IconsFolderLabelDecorator"
+            id="org.eclipaint.manager.decorator.icons.folder"
+            label="Icons Folder"
+            state="false">
+         <enablement>
+            <objectClass
+                  name="org.eclipse.core.resources.IFile">
+            </objectClass>
+         </enablement>
+         <description>
+            Show icons folder image resources.
+         </description>
+      </decorator>
+      <decorator
+            class="org.eclipaint.manager.label.decorator.IconsLabelDecorator"
+            id="org.eclipaint.manager..decorator.icons"
+            label="Icons"
+            state="false">
+         <enablement>
+            <objectClass
+                  name="org.eclipse.core.resources.IFile">
+            </objectClass>
+         </enablement>
+         <description>
+            Show all image resources as icons.
+         </description>
+      </decorator>
+   </extension>
+
+</plugin>

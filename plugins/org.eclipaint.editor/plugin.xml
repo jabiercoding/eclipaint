@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipaint.editor.ImageEditor"
+            default="false"
+            extensions="png,PNG,gif,GIF,bmp,BMP,jpg,JPG,jpeg,JPEG"
+            icon="icons/editor.gif"
+            id="org.eclipaint.editor"
+            name="EcliPaint">
+         <contentTypeBinding
+               contentTypeId="org.eclipaint.imageContentType">
+         </contentTypeBinding>
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipaint.editor"
+            name="EcliPaint">
+      </category>
+      <wizard
+            category="org.eclipaint.editor"
+            class="org.eclipaint.editor.wizards.ImageNewWizard"
+            icon="icons/newImage.png"
+            id="org.eclipaint.editor.wizard"
+            name="New png image">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipaint.editor.EditorPropertyTester"
+            id="org.eclipaint.editor.propertyTester.hasSelection"
+            namespace="org.eclipaint.editor.propertyTester"
+            properties="hasSelection"
+            type="org.eclipaint.editor.ImageEditor">
+      </propertyTester>
+   </extension>
+
+</plugin>

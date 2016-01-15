@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EcliPaint
+Bundle-SymbolicName: org.eclipaint.editor;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipaint.editor.activator.Activator
+Bundle-Vendor: Jabier Martinez
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
+ org.eclipse.ui.workbench,
+ org.eclipse.core.resources,
+ org.eclipaint.utils,
+ org.eclipse.ui.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
