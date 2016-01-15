@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipaint.feature"
+      label="EcliPaint Feature"
+      version="2.5.0.qualifier"
+      provider-name="Jabier Martinez">
+
+   <description url="https://github.com/jabiercoding/eclipaint">
+      EcliPaint
+   </description>
+
+   <copyright url="https://github.com/jabiercoding/eclipaint">
+      copyright text
+   </copyright>
+
+   <license url="https://github.com/jabiercoding/eclipaint">
+      license text
+   </license>
+
+   <plugin
+         id="org.eclipaint.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipaint.manager"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipaint.utils"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>
