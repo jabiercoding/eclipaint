@@ -1,7 +1,11 @@
 package org.eclipaint.editor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.Clipboard;
@@ -69,47 +73,42 @@ public class EditorUtils {
 	}
 
 	/**
-	 * We paint the selected pixel and then we recursively visit the left,
-	 * right, up and down pixels.
+	 * Flood fill algorithm non-recursive
 	 * 
 	 * @param referencePixel
 	 * @param pixel
+	 * @return modified or not
 	 */
 	public boolean fillPixels(PixelItem referencePixel, PixelItem pixel) {
-
-		// check if change is needed
-		if (paintPixel(editor.colorPickerSelection, pixel)) {
-
-			PixelItem rightPixel = getRightPixel(pixel);
-			if (rightPixel != null) {
-				if (!EditorUtils.isDifferentColor(referencePixel, rightPixel)) {
-					fillPixels(referencePixel, rightPixel);
-				}
-			}
-
-			PixelItem leftPixel = getLeftPixel(pixel);
-			if (leftPixel != null) {
-				if (!EditorUtils.isDifferentColor(referencePixel, leftPixel)) {
-					fillPixels(referencePixel, leftPixel);
-				}
-			}
-
-			PixelItem upPixel = getUpPixel(pixel);
-			if (upPixel != null) {
-				if (!EditorUtils.isDifferentColor(referencePixel, upPixel)) {
-					fillPixels(referencePixel, upPixel);
-				}
-			}
-
-			PixelItem downPixel = getDownPixel(pixel);
-			if (downPixel != null) {
-				if (!EditorUtils.isDifferentColor(referencePixel, downPixel)) {
-					fillPixels(referencePixel, downPixel);
-				}
-			}
-			return true;
+		// we do nothing if filling with the same color
+		if (!EditorUtils.isDifferentColor(editor.colorPickerSelection, referencePixel)) {
+			return false;
 		}
-		return false;
+
+		Queue<PixelItem> q = new LinkedList<PixelItem>();
+		q.add(pixel);
+		while (!q.isEmpty()) {
+			PixelItem peek = q.remove();
+			PixelItem w = peek;
+			PixelItem e = peek;
+			Set<PixelItem> set = new HashSet<PixelItem>();
+			while (w != null && !EditorUtils.isDifferentColor(referencePixel, w)) {
+				set.add(w);
+				w = getLeftPixel(w);
+			}
+			while (e != null && !EditorUtils.isDifferentColor(referencePixel, e)) {
+				set.add(e);
+				e = getRightPixel(e);
+			}
+			for (PixelItem p : set) {
+				paintPixel(editor.colorPickerSelection, p);
+				PixelItem n = getUpPixel(p);
+				q.add(n);
+				PixelItem s = getDownPixel(p);
+				q.add(s);
+			}
+		}
+		return true;
 	}
 
 	public PixelItem getDownPixel(PixelItem pixel) {
