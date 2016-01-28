@@ -6,7 +6,7 @@
       <editor
             class="org.eclipaint.editor.ImageEditor"
             default="false"
-            extensions="png,PNG,gif,GIF,bmp,BMP,jpg,JPG,jpeg,JPEG"
+            extensions="png,PNG,gif,GIF,bmp,BMP,jpg,JPG,jpeg,JPEG,ico,ICO"
             icon="icons/editor.gif"
             id="org.eclipaint.editor"
             name="EcliPaint">
@@ -212,7 +212,7 @@
    <extension
          point="org.eclipse.core.contenttype.contentTypes">
       <content-type
-            file-extensions="png,gif,bmp,jpg,jpeg"
+            file-extensions="png,gif,bmp,jpg,jpeg,ico"
             id="org.eclipaint.editor.imageContentType"
             name="Image"
             priority="normal">

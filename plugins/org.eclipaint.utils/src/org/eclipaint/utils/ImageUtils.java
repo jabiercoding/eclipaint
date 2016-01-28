@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.Display;
 
 public class ImageUtils {
 
-	public static final String[] IMAGE_EXTENSIONS = { "*.gif", "*.png", "*.bmp", "*.jpg" };
+	public static final String[] IMAGE_EXTENSIONS = { "*.gif", "*.png", "*.bmp", "*.jpg", "*.ico" };
 
 	public static void saveImageToFile(ImageData imageData, String imagePath, int format) {
 		ImageLoader loader = new ImageLoader();
