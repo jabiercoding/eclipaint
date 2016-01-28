@@ -617,14 +617,6 @@ public class ImageEditor extends EditorPart {
 			// Save alpha
 			newImageData.setAlpha(pixelItem.realPosition.x, pixelItem.realPosition.y, pixelItem.alpha);
 
-			// Set transparency pixel
-			if (newImageData.getTransparencyType() == SWT.TRANSPARENCY_PIXEL) {
-				if (pixelItem.alpha == 0) {
-					newImageData.setPixel(pixelItem.realPosition.x, pixelItem.realPosition.y,
-							newImageData.transparentPixel);
-				}
-			}
-
 			// Save colors
 			RGB color = pixelItem.color;
 
@@ -656,6 +648,13 @@ public class ImageEditor extends EditorPart {
 				newImageData.setPixel(pixelItem.realPosition.x, pixelItem.realPosition.y, pixelValue);
 			}
 
+			// Set transparency pixel
+			if (newImageData.getTransparencyType() == SWT.TRANSPARENCY_PIXEL) {
+				if (pixelItem.alpha == 0) {
+					newImageData.setPixel(pixelItem.realPosition.x, pixelItem.realPosition.y,
+							newImageData.transparentPixel);
+				}
+			}
 		}
 
 		// Save it

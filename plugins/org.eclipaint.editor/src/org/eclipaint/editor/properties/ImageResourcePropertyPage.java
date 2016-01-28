@@ -56,7 +56,6 @@ public class ImageResourcePropertyPage extends PropertyPage {
 				transparency = "Alpha information";
 			break;
 			case(SWT.TRANSPARENCY_PIXEL):
-				
 				transparency = "Palette pixel (" + imageData.transparentPixel + ")";
 			break;
 			case(SWT.TRANSPARENCY_MASK):
