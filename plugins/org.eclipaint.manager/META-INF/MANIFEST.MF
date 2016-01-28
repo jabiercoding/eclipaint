@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EcliPaint Manager
 Bundle-SymbolicName: org.eclipaint.manager;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.1.qualifier
 Bundle-Activator: org.eclipaint.manager.activator.Activator
 Bundle-Vendor: Jabier Martinez
 Require-Bundle: org.eclipse.core.runtime,

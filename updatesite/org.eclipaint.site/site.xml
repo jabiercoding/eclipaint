@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipaint.feature_2.5.0.201601151240.jar" id="org.eclipaint.feature" version="2.5.0.201601151240">
+   <feature url="features/org.eclipaint.feature_2.5.1.201601281726.jar" id="org.eclipaint.feature" version="2.5.1.201601281726">
       <category name="EcliPaint"/>
    </feature>
    <category-def name="EcliPaint" label="EcliPaint">

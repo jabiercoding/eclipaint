@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EcliPaint Utils
 Bundle-SymbolicName: org.eclipaint.utils;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.1.qualifier
 Bundle-Activator: org.eclipaint.utils.activator.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.swt,

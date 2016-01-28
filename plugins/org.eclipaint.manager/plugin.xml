@@ -4,7 +4,7 @@
 <extension
          point="org.eclipse.ui.views">
       <category
-            name="EcliPaint Icon Manager"
+            name="EcliPaint"
             id="org.eclipaint.views.manager">
       </category>
       <view
