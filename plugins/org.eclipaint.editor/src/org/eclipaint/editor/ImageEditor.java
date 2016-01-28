@@ -652,7 +652,8 @@ public class ImageEditor extends EditorPart {
 				}
 			} else {
 				// Direct color model
-				newImageData.setPixel(pixelItem.realPosition.x, pixelItem.realPosition.y, color.hashCode());
+				int pixelValue = newImageData.palette.getPixel(color);
+				newImageData.setPixel(pixelItem.realPosition.x, pixelItem.realPosition.y, pixelValue);
 			}
 
 		}
