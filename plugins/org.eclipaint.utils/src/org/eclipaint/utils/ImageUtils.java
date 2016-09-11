@@ -80,7 +80,7 @@ public class ImageUtils {
 	 * 
 	 * @param image
 	 * @param direction
-	 *            Rotate: SWT.LEFT, SWT.RIGHT, SWT.DOWN for 180º, Flip:
+	 *            Rotate: SWT.LEFT, SWT.RIGHT, SWT.DOWN for 180ï¿½, Flip:
 	 *            SWT.HORIZONTAL, SWT.VERTICAL
 	 * @return
 	 */
@@ -262,15 +262,25 @@ public class ImageUtils {
 	}
 
 	public static Image getImage(String absolutePath) {
-		try {
+		FileInputStream fileInputStream = null;
+	    try {
 			if (absolutePath == null) {
 				return null;
 			}
-			return new Image(Display.getDefault(), new FileInputStream(absolutePath));
+			fileInputStream = new FileInputStream(absolutePath);
+			return new Image(Display.getDefault(), fileInputStream);
 		} catch (Exception e) {
 			// If any exception happens return null
 			return null;
-		}
+		} finally {
+            if (fileInputStream != null){
+                try {
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    //do nothing
+                }
+            }
+        }
 	}
 
 	public static boolean isImageFile(IResource resource) {
