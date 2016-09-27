@@ -42,7 +42,7 @@
             class="org.eclipaint.manager.label.decorator.IconsFolderLabelDecorator"
             id="org.eclipaint.manager.decorator.icons.folder"
             label="Icons Folder"
-            state="false">
+            state="true">
          <enablement>
             <objectClass
                   name="org.eclipse.core.resources.IFile">
