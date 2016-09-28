@@ -192,16 +192,26 @@ public class ImageEditor extends EditorPart {
 		currentColorToolItem.setToolTipText("Current color");
 
 		// initialize color selection
-		// get first non transparent one
+		// get first completely non-transparent color
 		for (PixelItem item : pixels) {
 			if (item.alpha == 255) {
 				colorPickerSelection = (PixelItem) item.clone();
 				break;
 			}
 		}
-		// if not found, get the first color
+		// get first non-transparent color
+		for (PixelItem item : pixels) {
+			if (item.alpha != 0) {
+				colorPickerSelection = (PixelItem) item.clone();
+				break;
+			}
+		}
+		// if not found, get black
 		if (colorPickerSelection == null) {
-			colorPickerSelection = (PixelItem) pixels.get(0).clone();
+			PixelItem pixelItem = (PixelItem) pixels.get(0).clone();
+			pixelItem.alpha = 255;
+			pixelItem.color = new RGB(0,0,0);
+			colorPickerSelection = pixelItem;
 		}
 		currentColorToolItem.setImage(EditorUtils.createImageForColorSelection(colorPickerSelection.color,
 				colorPickerSelection.alpha));
