@@ -2,7 +2,7 @@
 <feature
       id="org.eclipaint.feature"
       label="EcliPaint Feature"
-      version="2.5.1.qualifier"
+      version="2.5.2.qualifier"
       provider-name="Jabier Martinez">
 
    <description url="https://github.com/jabiercoding/eclipaint">
