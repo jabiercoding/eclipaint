@@ -7,7 +7,6 @@ import java.util.List;
 import org.eclipaint.manager.activator.Activator;
 import org.eclipaint.manager.crawlers.CrawlEclipseIconsAction;
 import org.eclipaint.manager.crawlers.CrawlISharedImagesAction;
-import org.eclipaint.manager.crawlers.CrawlWebAction;
 import org.eclipaint.manager.crawlers.CrawlWhiteBackgroundIconsAction;
 import org.eclipaint.utils.ImageUtils;
 import org.eclipaint.utils.WorkbenchUtils;
@@ -501,10 +500,8 @@ public class IconManagerView extends ViewPart {
 			item.fill(menu, -1);
 			ActionContributionItem item2 = new ActionContributionItem(new CrawlISharedImagesAction());
 			item2.fill(menu, -1);
-			ActionContributionItem item3 = new ActionContributionItem(new CrawlWebAction());
+			ActionContributionItem item3 = new ActionContributionItem(new CrawlWhiteBackgroundIconsAction());
 			item3.fill(menu, -1);
-			ActionContributionItem item4 = new ActionContributionItem(new CrawlWhiteBackgroundIconsAction());
-			item4.fill(menu, -1);
 			return menu;
 		}
 

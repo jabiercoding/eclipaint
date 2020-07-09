@@ -74,7 +74,7 @@ public class CrawlWhiteBackgroundIconsAction extends Action {
 				GridLayout gridLayout = new GridLayout(1, false);
 				Shell shell = new Shell(display);
 				shell.setText("Crawl WhiteBackground icons");
-				shell.setImage(Activator.getImageDescriptor("icons/crawlWhiteBackgroundIconsAction.png").createImage());
+				shell.setImage(Activator.getImageDescriptor("icons/crawlers/crawlWhiteBackgroundIconsAction.png").createImage());
 				shell.setLayout(gridLayout);
 
 				Label label = new Label(shell, SWT.NONE);
